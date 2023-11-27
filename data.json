@@ -1,15 +1,14 @@
 {
-  "john_doe": {
-    "name": "John Doe",
-    "email": "john.doe@example.com"
+  "ishanjain": {
+    "name": "Ishan Jain",
+    "email": "ishanjain2000@gmail.com",
+    "msg" : "Ask me anything",
+    "pdftotext": "Ishan Jain GitHub: github.com/ishan494a LinkedIn: linkedin.com/in/ishanjain2000 Email: ishanjain2000@gmail.com Passionate software enthusiast dedicated to expanding skills while contributing to meaningful projects in the field of software engineering. Experience Star Immigration Consultancy | IT Solutions Specialist May 2021 - February 2022 - Implemented front-end and back-end solutions to enhance the company website, focusing on scalability, security, and user experience. - Orchestrated website updates and feature enhancements using agile methodologies, ensuring seamless functionality through version control and continuous integration. - Managed immigration document accuracy and compliance while assisting with visa applications, calendar management, and administrative tasks. Concentrix | Technical Support Specialist September 2019 – April 2020 - Provided technical support to Oculus VR customers, assisting with troubleshooting, problem-solving, and answering inquiries related to Oculus VR products and services. - Diagnosed and resolved technical issues related to Oculus VR hardware and software, ensuring a seamless and satisfying customer experience. - Created and updated technical documentation, FAQs, and training materials to help both customers and colleagues understand and resolve common technical issues efficiently. Education Western University B.Eng. in Software Engineering | Current GPA: 4.0/4.0 April 2026 | London, Ontario Sheridan College Diploma in Computer Engineering | GPA: 3.6/4.0 August 2020 | Brampton, Ontario Relevant Coursework Courses: Algorithms and Data Structures, Digital Logic Systems, Software Construction (C# and Unity), Software Design (UML), Discrete Structures, Scripting Programming Language Skills Languages: C#, Java, Python, JavaScript/TypeScript, HTML/CSS Tools: Git/GitHub, Unix Shell, VS Code, Microsoft SQL, MongoDB Frameworks and libraries: React.js, React Native, Node.js, Express.js, JQuery Projects TravelTrove (Ignition Hacks) 2 August 2023 | JavaScript, HTML, CSS, Git, React.JS, Web APIs, OpenAI API, Geotagging API React based AI-powered website that provides suggestions based on user descriptions for various preferences like food, restaurants, clothes, movies, and vacation spots. - Seamlessly integrates multiple APIs for user-friendly experiences, including OpenAI Key, Unsplash API, Leaflet React API, and API Ninjas Geocoding API. Portfolio 2 July 2023 | JavaScript, HTML/CSS, React.js, VS Code Built from the ground up using essential web technologies, this online portfolio radiates professionalism and a touch of sophistication. - Leveraging React.JS, the website boasts a responsive layout, ensuring optimal viewing across all devices while maintaining a dynamic user experience. - Featuring structured sections, detailed project presentations, and skill highlights, this portfolio offers a comprehensive view of my skills and accomplishments."
   },
-  "jane_smith": {
-    "name": "Jane Smith",
-    "email": "jane.smith@example.com"
-  },
-  "sam_jackson": {
-    "name": "Sam Jackson",
-    "email": "sam.jackson@example.com"
+  "sarthakjain": {
+    "name": "Sarthak Jain",
+    "email": "sj@gmail.com",
+    "msg" : "Ask me anything",
+    "pdftotext": "pdf here"
   }
-
 }
