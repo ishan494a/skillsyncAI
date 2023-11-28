@@ -1,6 +1,8 @@
 <%- include('partials/head')  %>
   <%- include('partials/navbar')  %>
-  <h1>
+  <h1 style="
+  text-align: center;
+  ">
     <%= name %>
   </h1>
   <div class="container mt-5">
@@ -10,8 +12,8 @@
           <div class="card-header">
             <h5 class="mb-0">Ask me anything</h5>
           </div>
-          <div class="card-body" id="chatresponse" style="max-height: 300px; overflow-y: auto;">
-            <%= msg %>
+          <div class="card-body" id="chatresponse" style=" min-height: 200px; max-height: 400px; overflow-y: auto;">
+            Your msg will display here!
           </div>
           <div class="card-footer">
             <div class="input-group">
@@ -26,6 +28,7 @@
       </div>
     </div>
   </div>
+
   <%- include('partials/footer')  %>
   <script>
     document.getElementById('sendButton').addEventListener('click', handleSubmit);

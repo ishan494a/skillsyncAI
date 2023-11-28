@@ -15,14 +15,14 @@ app.use(bodyParser.json());
 
 app.set('view engine', 'ejs');
 app.set('views' , path.join(__dirname, '/views'))
-
+//card-body
 app.post('/sendMessage', async (req, res) => {
   const { message } = req.body;
   let generated = '';
   const myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
   myHeaders.append("Authorization", `Bearer ${apiKey}`);
-  const prompt = `Respond based on a user's resume. Assume you are answering on users behalf. Keep the responses as brief as possible. Do not add unnecessary info that user didn't ask for. The message to you by the person asking about the owner of the resume is: "${message}", and the resume is provided in text format: ${pdfText}.`
+  const prompt = `(Response should be really brief.) Respond on behalf of the resume owner in the first person. Provide concise answers directly related to the user's inquiry about the resume. If the user asks unrelated questions, reply with a message stating that I cannot answer unrelated questions. The user's message is: '${message}', and the resume is provided in text format: ${pdfText}. Keep responses brief and avoid adding unnecessary information not requested by the user.`
   const raw = JSON.stringify({
     "model": "gpt-3.5-turbo",
     "messages" : [{
