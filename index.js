@@ -3,7 +3,7 @@ const app = express();
 const path = require('path');
 const userData = require('./data.json');
 const bodyParser = require('body-parser');
-const axios = require('axios');
+const fetch = require('node-fetch');
 
 let currentUser;
 let pdfText;
@@ -18,9 +18,39 @@ app.set('views' , path.join(__dirname, '/views'))
 
 app.post('/sendMessage', async (req, res) => {
   const { message } = req.body;
-  const prompt = `You are a personalized chatbot that answers questions on the resume owner's behalf. Use the message sent to use and respond based on users resume. Heres the message: ${message}, here's the resume in text format: ${pdfText}`;
-  console.log(message, currentUser);
-  // console.log('Generated text from OpenAI:', generatedText);
+  let generated = '';
+  const myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+  myHeaders.append("Authorization", `Bearer ${apiKey}`);
+  const prompt = `Respond based on a user's resume. Assume you are answering on users behalf. Keep the responses as brief as possible. Do not add unnecessary info that user didn't ask for. The message to you by the person asking about the owner of the resume is: "${message}", and the resume is provided in text format: ${pdfText}.`
+  const raw = JSON.stringify({
+    "model": "gpt-3.5-turbo",
+    "messages" : [{
+      "role": "user",
+      "content": `${prompt}`,
+    }
+    ],
+    "max_tokens" : 256
+});
+  const requestOptions = {
+    method: 'POST',
+    headers: myHeaders,
+    body: raw,
+    redirect: 'follow'
+  };
+  fetch("https://api.openai.com/v1/chat/completions", requestOptions)
+  .then(response => response.json())
+  .then(result => {
+    generated = result.choices[0].message.content
+    res.send({generated});
+  });
+
+});
+
+app.post('/register',  (req, res) => {
+  const { username, email, password} = req.body;
+  // Encrypt password, add to database, prompt user to sign in.
+
 });
 
 app.get('/', (req, res)=>{

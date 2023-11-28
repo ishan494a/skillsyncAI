@@ -11,17 +11,17 @@
                     <form>
                         <div class="form-group">
                             <label for="username">Username:</label>
-                            <input type="text" class="form-control" id="username" placeholder="Enter your username">
+                            <input type="text" class="form-control" id="username"  name="username" placeholder="Enter your username">
                         </div>
                         <div class="form-group">
                             <label for="email">Email:</label>
-                            <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email">
                         </div>
                         <div class="form-group">
                             <label for="password">Password:</label>
-                            <input type="password" class="form-control" id="password" placeholder="Enter your password">
+                            <input type="password" class="form-control"  id="password" name="password" placeholder="Enter your password">
                         </div>
-                        <button type="submit" class="btn btn-primary btn-block">Register</button>
+                        <button type="sendButton" onclick="handleSubmit()" class="btn btn-primary btn-block">Register</button>
                     </form>
                 </div>
             </div>
@@ -29,3 +29,29 @@
     </div>
 </div>
   <%- include('partials/footer')  %>
+  <script>
+    document.getElementById('sendButton').addEventListener('click', handleSubmit);
+  
+    function handleSubmit() {
+        const username = document.getElementById('username').value;
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      console.log(username);
+      fetch('/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username, email, password }),
+      })
+        .then(response => response.json())
+        .then(data => {
+          console.log(data);
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+  
+      messageInput.value = '';
+    }
+  </script>

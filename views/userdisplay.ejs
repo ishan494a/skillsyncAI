@@ -10,7 +10,7 @@
           <div class="card-header">
             <h5 class="mb-0">Ask me anything</h5>
           </div>
-          <div class="card-body" id="chatArea" style="max-height: 300px; overflow-y: auto;">
+          <div class="card-body" id="chatresponse" style="max-height: 300px; overflow-y: auto;">
             <%= msg %>
           </div>
           <div class="card-footer">
@@ -42,12 +42,13 @@
         body: JSON.stringify({ message }),
       })
         .then(response => response.json())
-        .then(data => {
-          console.log(data);
-        })
-        .catch(error => {
+          .then(data => {
+            console.log(data);
+            document.getElementById('chatresponse').innerText = data.generated;
+          })
+          .catch(error => {
           console.error('Error:', error);
-        });
+          });
   
       messageInput.value = '';
     }
